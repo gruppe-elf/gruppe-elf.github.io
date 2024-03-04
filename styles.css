@@ -1,0 +1,150 @@
+@font-face {
+    font-family: "ZhComposite";
+    size-adjust: 97.5%;
+    src: local("Songti SC"), local("SimSun");
+}
+
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --c0: #FF3D00;
+    --c1: #000000;
+    --c2: #9D9F9F;
+    --s: 4rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --c0: #F53100;
+        --c1: #E8E8E8;
+        --c2: #818183;
+    }
+}
+
+body {
+    font-family: Palatino, "Palatino Linotype", "Bitstream Charter", "ZhComposite", serif;
+    font-size: 1.125rem;
+    line-height: 1.5625rem;
+    letter-spacing: 0.0216em;
+    color: var(--c1);
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main h1 {
+    font-size: 1.125rem;
+    line-height: 1.5625rem;
+    letter-spacing: 0.051em;
+    text-transform: uppercase;
+    color: var(--c0);
+}
+
+html[lang="zh"] {
+    body, main h1 {
+        line-height: 1.75rem;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: var(--c2);
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        letter-spacing: 0.0224em;
+        background-color: #070708;
+
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    main h1 {
+        letter-spacing: 0.0525em;
+    }
+}
+
+main {
+    margin-top: 44.25vh;
+    display: flex;
+}
+
+main h1 {
+    padding-left: var(--s);
+    width: 35%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+main p {
+    /* max-width: 43.75rem; */
+    padding-right: var(--s);
+    position: relative;
+}
+
+main p:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0.4375rem;
+    left: -1.1875rem;
+
+    width: 0.5625rem;
+    height: 0.5625rem;
+    border-radius: 1rem;
+    background-color: var(--c1);
+}
+
+html[lang="zh"] {
+    main p:before {
+        top: 0.5625rem;
+    }
+}
+
+footer {
+    padding-left: 35%;
+    margin: 2.5rem 0;
+}
+
+footer ul {
+    margin: 0 0 1px 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+html[lang="zh"] {
+    footer ul {
+        margin-bottom: 0.25rem;
+    }
+}
+
+footer ul a {
+    color: var(--c1);
+    transition: color 75ms linear;
+}
+
+footer ul a:hover {
+    color: var(--c2);
+}
+
+footer ul li:after {
+    content: "\00a0·\00a0";
+    display: inline-block;
+}
+
+html[lang="zh"] {
+    footer ul li:after {
+        width: 1em;
+        text-align: center;
+    }
+}
+
+footer ul li:last-child:after {
+    content: "";
+}
